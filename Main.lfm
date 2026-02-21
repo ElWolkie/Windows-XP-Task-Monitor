@@ -1,0 +1,129 @@
+object Form2: TForm2
+  Left = 83
+  Height = 590
+  Top = 34
+  Width = 982
+  Caption = 'Administrador de Tareas'
+  ClientHeight = 590
+  ClientWidth = 982
+  Color = clBtnFace
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  LCLVersion = '3.2.0.0'
+  object TaskLv: TListView
+    Left = 8
+    Height = 576
+    Top = 8
+    Width = 968
+    Color = clWhite
+    Columns = <    
+      item
+        Caption = 'Nombre del Proceso'
+        Width = 160
+      end    
+      item
+        Caption = 'Ruta del Proceso'
+        Width = 160
+      end    
+      item
+        Caption = 'ID del Proceso'
+        Width = 130
+      end    
+      item
+        Caption = 'CPU'
+        Width = 85
+      end    
+      item
+        Caption = 'Memoria'
+        Width = 120
+      end    
+      item
+        Caption = 'Estado del Proceso'
+        Width = 160
+      end    
+      item
+        Caption = 'Prioridad'
+        Width = 150
+      end>
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Lucida Sans'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    GridLines = True
+    ParentFont = False
+    PopupMenu = PopupMenu1
+    TabOrder = 0
+    ViewStyle = vsReport
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 200
+    Top = 192
+    object ListTasks1: TMenuItem
+      Caption = 'Lista de Tareas'
+      ShortCut = 112
+      OnClick = ListTasks1Click
+    end
+    object N1: TMenuItem
+      Caption = '-'
+    end
+    object EndProcess1: TMenuItem
+      Caption = 'Finalizar Proceso'
+      ShortCut = 115
+      OnClick = EndProcess1Click
+    end
+    object N2: TMenuItem
+      Caption = '-'
+    end
+    object OpenApp: TMenuItem
+      Caption = 'Abrir aplicación'
+      OnClick = OpenAppClick
+    end
+    object ChangePriority: TMenuItem
+      Caption = 'Cambiar Prioridad'
+      object RealTime: TMenuItem
+        Caption = 'Tiempo Real'
+        OnClick = RealTimeClick
+      end
+      object Highest: TMenuItem
+        Caption = 'Alta'
+        OnClick = HighestClick
+      end
+      object AboveNormal: TMenuItem
+        Caption = 'Por encima de lo normal'
+        OnClick = AboveNormalClick
+      end
+      object Normal: TMenuItem
+        Caption = 'Normal'
+        OnClick = NormalClick
+      end
+      object BelowNormal: TMenuItem
+        Caption = 'Por debajo de lo normal'
+        OnClick = BelowNormalClick
+      end
+      object Lowest: TMenuItem
+        Caption = 'Baja'
+        OnClick = LowestClick
+      end
+    end
+    object N3: TMenuItem
+      Caption = '-'
+    end
+    object Autores: TMenuItem
+      Caption = 'Autores'
+      OnClick = AutoresClick
+    end
+  end
+  object Timer1: TTimer
+    Interval = 5000
+    OnTimer = Timer1Timer
+    Left = 408
+    Top = 192
+  end
+  object OpenAppDialog: TOpenDialog
+    Left = 312
+    Top = 160
+  end
+end
